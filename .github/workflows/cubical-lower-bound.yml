@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'cubical_lower_bound/**'
+      - 'LICENSE'
       - '.github/workflows/cubical-lower-bound.yml'
   workflow_dispatch:
 permissions:
