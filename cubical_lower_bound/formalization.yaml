@@ -1,0 +1,63 @@
+version: v0.4
+project:
+  name: Face numbers of cubical polytopes
+  description: Convex cubical polytopes satisfy the edge and higher-face lower bounds of Theorem 1.1 and
+    Corollary 3.1, with equality for stacked cubical polytopes. In dimensions at least four the strengthened
+    edge bound holds for finite connected closed cubical homology manifolds over any field with bipartite
+    graph and common-face intersections. The mod-two homology-sphere result also supplies a bipartition.
+  authors:
+  - Caius Folkerts
+  responsible_maintainers:
+  - Caius Folkerts
+  license: Apache-2.0
+classification:
+  arxiv:
+  - math.CO
+  - math.MG
+  msc2020:
+  - 52B05
+  - 52B11
+sources:
+- title: Face numbers of cubical polytopes
+  authors:
+  - Caius Folkerts
+  type: paper
+  relationship: formalizes
+  location: paper.pdf
+  note: Bulletin submission v9, Theorem 1.1, Corollary 3.1, the strengthened formulas, stacking equality
+    and both page 4 extensions of equation (3.1).
+related_formalizations:
+- title: caiusdfolkerts/research cubical_lower_bound
+  relationship: repackages
+  id: https://github.com/caiusdfolkerts/research/tree/84af8a119ce7e751efe91d50ba82a6caa4aa98c5/cubical_lower_bound_clean
+  note: The polytope and PL-sphere results and Palomar packaging come from this earlier snapshot. The
+    v9 revision adds finite order-complex cohomology, the normal pseudomanifold incidence and link-rigidity
+    proofs, and both homology-manifold and homology-sphere conclusions.
+- title: SolarYs431/lean-eval-platonic-classification
+  relationship: adapts
+  id: https://github.com/SolarYs431/lean-eval-platonic-classification
+  note: Daniele Cappello's Apache-2.0 polytope infrastructure is adapted in the substantive sources. Original
+    attribution headers and licences are retained.
+automation:
+  methods:
+  - method: agent
+    tool_setup: The manuscript discloses GPT-6 Astra, GPT-5.6 Sol, and Kimi K3 assistance in developing
+      its proofs. Historical roles beyond that disclosure have not been independently reconstructed.
+  - method: agent
+    tool_setup: OpenAI Codex GPT-6.1 Sol prepared the Palomar statement and metadata, comparing the supplied
+      manuscript, README table, and Lean declarations.
+  - method: agent
+    tool_setup: OpenAI Codex (GPT-6) developed the v9 Lean extension, edited the Challenge declarations
+      and compared the selected statements with the supplied manuscript.
+review:
+  status: unchecked
+  notes: The earlier PL-sphere snapshot 84af8a119ce7e751efe91d50ba82a6caa4aa98c5 passed mechanical verification
+    and its editorial review had zero warnings. The review of that snapshot covered the earlier manuscript.
+    Verification and review for this revision are identified by their own commit.
+limitations:
+- Homology is expressed in the finite combinatorial model. The normal link of a cell is represented by
+  the order complex of its strict cofaces. Sphere cohomology is specified by the ordinary simplicial coboundary
+  over the given field. The connectedness hypothesis is on the comparability graph of nonempty cells,
+  the one-skeleton of the barycentric subdivision.
+- The polytope results include higher face numbers and stacked equality. The homology-manifold and mod-two
+  homology-sphere extensions concern the strengthened edge bound (3.1).
