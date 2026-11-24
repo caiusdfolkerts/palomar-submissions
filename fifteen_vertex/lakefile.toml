@@ -1,0 +1,73 @@
+name = "fifteenVertex"
+version = "0.1.0"
+defaultTargets = ["FifteenVertex"]
+fixedToolchain = true
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "56a005855ea17e0b0958f73ec801ae140b0a1679"
+
+[[lean_lib]]
+name = "FifteenVertex"
+roots = []
+globs = [
+  "Challenge",
+  "Cubical.Polytope.AdiacenzaUnica",
+  "Cubical.Polytope.BandieraCompagna",
+  "Cubical.Polytope.BandieraVertice",
+  "Cubical.Polytope.Connettivita",
+  "Cubical.Polytope.ConnettivitaGlobale",
+  "Cubical.Polytope.ConoVertice",
+  "Cubical.Polytope.Definitions",
+  "Cubical.Polytope.Diamante",
+  "Cubical.Polytope.Diamante2D",
+  "Cubical.Polytope.DiamanteRelativo",
+  "Cubical.Polytope.DimStretta",
+  "Cubical.Polytope.DueFunzionali",
+  "Cubical.Polytope.DueVertici",
+  "Cubical.Polytope.Equivarianza",
+  "Cubical.Polytope.FacciaArgmax",
+  "Cubical.Polytope.FacciaIntermedia",
+  "Cubical.Polytope.FlagAdiacente",
+  "Cubical.Polytope.Gallerie",
+  "Cubical.Polytope.Imports",
+  "Cubical.Polytope.Interpolazione",
+  "Cubical.Polytope.MossaInvolutiva",
+  "Cubical.Polytope.Perno",
+  "Cubical.Polytope.PerturbazioneFinita",
+  "Cubical.Polytope.ScalaBandiere",
+  "Cubical.Polytope.SecondoIntermedio",
+  "Cubical.Polytope.SecondoSpigolo",
+  "Cubical.Polytope.SottoPolitopo",
+  "Cubical.Polytope.VerticiEsposti",
+  "Fifteen",
+  "Fifteen.Arithmetic",
+  "Fifteen.Certificate",
+  "Fifteen.Chart",
+  "Fifteen.Construction",
+  "Fifteen.Core",
+  "Fifteen.FaceCertificate",
+  "Fifteen.Faces",
+  "Fifteen.Hull",
+  "Fifteen.Incidences",
+  "Fifteen.Minors",
+  "Fifteen.PaperCoordinates",
+  "Fifteen.Perles",
+  "Fifteen.Projection",
+  "Fifteen.RankLemma",
+  "Fifteen.Reconstruction",
+  "Framework.CompleteFaceLattice",
+  "Framework.FaceOrder",
+  "Framework.Faces",
+  "Framework.FieldCoordinates",
+  "Framework.FieldSpan",
+  "Framework.FiniteHullCertificates",
+  "Framework.Graph",
+  "Framework.HomogeneousConvex",
+  "Framework.HomogeneousSpan",
+  "Framework.PolytopeGeometry",
+  "Framework.PolytopeTargets",
+  "Framework.RationalCoordinates",
+  "Solution"
+]

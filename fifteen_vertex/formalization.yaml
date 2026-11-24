@@ -1,0 +1,51 @@
+version: v0.4
+project:
+  name: A nonrational four-polytope with fifteen vertices
+  description: >-
+    Fifteen explicit homogeneous rays determine a full-dimensional convex four-polytope.
+    Its face lattice admits a realization over a subfield of the reals if and only if
+    that subfield contains the square root of five. In particular this face lattice
+    has no rational realization.
+  authors: [Caius Folkerts]
+  responsible_maintainers: [Caius Folkerts]
+  license: Apache-2.0
+sources:
+  - title: A nonrational four-polytope with fifteen vertices
+    authors: [Caius Folkerts]
+    id: "Caius Folkerts, A nonrational four-polytope with fifteen vertices (2026), manuscript included as paper.pdf"
+    type: paper
+    location: Theorem 1 and the explicit construction in Proposition 2
+    relationship: formalizes
+    author_endorsement: participated
+related_formalizations:
+  - title: Realization fields of four-polytopes and simple-vertex deletion
+    id: PALOMAR-2026-11-19-000009
+    relationship: builds-on
+    note: Reuses convex-polytope foundations, face-order transport and exact certificate techniques from the seventeen-vertex formalization. The fifteen rays and their incidence reconstruction are specific to this paper.
+classification:
+  arxiv: [math.CO, math.MG]
+  msc2020: [52B11, 52B05]
+status:
+  scope: >-
+    The single compared theorem identifies the fifteen rays of the manuscript,
+    the dimension and vertex count of their hull, and the necessary and sufficient
+    field condition for every combinatorially equivalent realization.
+automation:
+  methods:
+    - method: agent
+      framework: OpenAI Codex
+      tool_setup: >-
+        Codex implemented the Lean proof from the author's paper, adapted the
+        upstream Lean foundations, generated exact finite certificates and
+        prepared the comparison project. Lean checked the certificate identities
+        and the symbolic reconstruction proof.
+fidelity:
+  divergences: >-
+    Positive scalar multiples identify homogeneous representatives. The affine
+    model drops one coordinate on the sum-one section. Face-lattice equivalence
+    uses the inclusion order on nonempty exposed faces, with the empty face
+    recoverable as a common bottom element. The solution uses exact supporting
+    forms and small minors to establish the face incidences of the paper.
+review:
+  status: unchecked
+  notes: The mathematical author commissioned this formalization. No independent human audit of the Lean proof or comparison is claimed.
