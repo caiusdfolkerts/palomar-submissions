@@ -86,13 +86,11 @@ def RealizableOver (P : ConvexPolytope d) (K : Subfield ℝ) : Prop :=
 
 end Papers.Polytopes
 
-namespace Papers.Nonrational
-noncomputable def phi : ℝ := (1 + Real.sqrt 5) / 2
-namespace Fifteen
+namespace Papers.Nonrational.Fifteen
 open Papers.Polytopes
-def t : ℝ := phi - 1
-
-def paperRay : Fin 15 → Fin 5 → ℝ :=
+/-- Homogeneous representatives, in the vertex order of the manuscript. -/
+def manuscriptRay : Fin 15 → Fin 5 → ℝ :=
+  let t : ℝ := (1 + Real.sqrt 5) / 2 - 1
   ![![1,1,1,0,0], ![1,1+t,1,0,0], ![0,1,1,1,1],
     ![t,1,1,0,0], ![t,1+t,1,0,t], ![1,1,0,t,0],
     ![0,0,0,3+t,1], ![0,0,0,1,1], ![1,0,0,1,1],
@@ -109,8 +107,7 @@ containing the square root of five. -/
 theorem explicitFifteenVertexField :
     ∃ (P : ConvexPolytope 4) (p : Fin 15 → E 4),
       P.vertices = Finset.univ.image p ∧ P.IsFullDim ∧ P.vertices.card = 15 ∧
-      (∀ i, ∃ a b : ℝ, 0 < a ∧ 0 < b ∧ a • sectionCoordinates (p i) = b • paperRay i) ∧
+      (∀ i, ∃ a b : ℝ, 0 < a ∧ 0 < b ∧ a • sectionCoordinates (p i) = b • manuscriptRay i) ∧
       ∀ K : Subfield ℝ, RealizableOver P K ↔ Real.sqrt 5 ∈ K := by
   sorry
-end Fifteen
-end Papers.Nonrational
+end Papers.Nonrational.Fifteen
